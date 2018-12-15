@@ -1,6 +1,6 @@
-# React RPG card game
+# React RPG Card Game
 > A card game prototype to put my react skills to the test
 
 ![](screen.png)
  
-Images privided by [Robohash](https://robohash.org).
+Awesome Kittens provided by [Robohash](https://robohash.org).
