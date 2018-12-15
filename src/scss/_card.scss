@@ -1,0 +1,97 @@
+.card {
+    border: 5px solid rgba($color-secondary, 1);
+    border-radius: 10px;
+    width: 200px;
+    height: 340px;
+    position: relative;
+    background-image: linear-gradient(rgba($color-secondary, .7), rgba($color-primary, .7));
+    box-shadow: 0 .5rem 1rem rgba(#000, .4);
+    font-weight: 700;
+    font-size: 1.4rem;
+    display: inline-block;
+    margin: 1rem;
+
+    &__lvl {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin: 1rem;
+        content: "";
+        padding: 1.5rem;
+        border-radius: 50%;
+        box-shadow: 0 .5rem 1rem rgba(#000, .2);
+        border: 2px solid rgba($color-secondary, 1);
+        border: 2px solid #fff;
+        // background: $color-pow;
+        color: #fff;
+
+
+        &--no {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__img {
+        border-radius: 5px;
+        padding: 0 2rem;
+        width: 100%;
+    }
+
+    &>h3 {
+        color: #fff;
+        text-align: center;
+        margin: .5rem 0;
+    }
+
+    &__table {
+        font-size: 1.2rem;
+        width: 84%;
+        margin: auto;
+        background: #fff;
+        border-radius: 5px;
+        color: #444;
+        overflow: hidden;
+
+        &--head,
+        &--body {
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            & >span {
+                width: 33%;
+            }
+        }
+
+        &--head {
+            // background: $color-pow;
+            &:first-child{ color: #fff;}
+        }
+
+        &--body {
+            font-weight: 700;
+        }
+    }
+
+    &__proBar {
+        background: #fff;
+        width: 70%;
+        height: .6rem;
+        border-radius: 1rem;
+        overflow: hidden;
+        position: relative;
+        margin: auto;
+
+
+        &--fill {
+            position: relative;
+            width: 0%;
+            height: 1rem;
+            outline: none;
+            font-size: 1rem;
+            transition: all .4s;
+        }
+    }
+}
