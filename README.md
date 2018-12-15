@@ -1,5 +1,5 @@
 # React RPG Card Game
-> A prototype for an RPG game to put my react and programming logic skills to the test!
+> A prototype for an RPG game to put my programming skills to the test!
 
 ![](screen.png)
 
