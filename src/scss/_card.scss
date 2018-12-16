@@ -5,11 +5,13 @@
     height: 340px;
     position: relative;
     background-image: linear-gradient(rgba($color-secondary, .7), rgba($color-primary, .7));
-    box-shadow: 0 .5rem 1rem rgba(#000, .4);
+    box-shadow: 0 .2rem .5rem rgba(#000, .2);
     font-weight: 700;
     font-size: 1.4rem;
     display: inline-block;
     margin: 1rem;
+    transition: all .1s;
+    cursor: pointer;
 
     &__lvl {
         position: absolute;
@@ -38,6 +40,7 @@
         border-radius: 5px;
         padding: 0 2rem;
         width: 100%;
+        
     }
 
     &>h3 {
@@ -94,4 +97,10 @@
             transition: all .4s;
         }
     }
+
+    &:hover {
+        transform:scale(1.02);
+        box-shadow: 0 .5rem 1rem rgba(#000, .4);
+    }
+    user-select: none;
 }

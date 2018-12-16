@@ -8,8 +8,9 @@ const Card = (props) => {
     fill =  (props.exp - fill)/fill*100;
     let color = props.attrib || "strength";
     
-    let image = sessionStorage.getItem((props.race+"DB"));
-    image =  JSON.parse(image)[props.clase][1];
+    let image = `${(props.race).charAt(0)}_${(props.clase).slice(0,3)}2.png`;
+    console.log(image);
+    
     let img = require('../img/'+image);
     
     return (

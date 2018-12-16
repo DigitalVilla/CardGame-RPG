@@ -20,8 +20,8 @@ class Hero {
 
     setAttribs(race, clase) {
         // Strength, Agility, intelligenceigence // 1 point per race
-        const human = [0, 2, 0];
-        const dwarf = [2, 0, 0];
+        const human = [0, 1, 0];
+        const dwarf = [1, 0, 0];
         const elf = [0, 0, 2];
         const racePoints = [human, dwarf, elf];
         // Strength, Agility, intelligenceigence // 6 points per class

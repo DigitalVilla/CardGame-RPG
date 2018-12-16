@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import "./scss/main.scss";
-// import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './serviceWorker';
 
-import Deck from "./app/Deck";
+import App from "./components/App";
 
-ReactDOM.render(<Deck />, document.getElementById('root'));
-            // serviceWorker.unregister(); 
+ReactDOM.render( < App / > , document.getElementById('root'));
+serviceWorker.unregister();

@@ -1,0 +1,47 @@
+.searchBox {
+    font-size: 1.8rem;
+
+    & input,
+    select,
+    button {
+        background-image: linear-gradient(#FAFAFA, #F4F4F4 40%, #e7e7e7);
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+        border: 1px solid #AAA;
+        border-radius: 4px;
+        margin: 2rem 1rem ;
+        width: 220px;
+        font-size: inherit;
+        height: 40px;
+        padding: 5px 10px;
+        color: #555;
+    }
+
+    & select {
+        background-image: url(../img/icons/select.png), linear-gradient(#FAFAFA, #F4F4F4 40%, #e7e7e7);
+        background-position: 90% center;
+        background-repeat: no-repeat;
+        background-size:  auto 100%;
+        overflow: hidden;
+        appearance: button;
+        padding-end: 20px;
+        padding-start: 2px;
+        user-select: none;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 120px;
+    }
+
+    & input {
+        text-align: center;
+    }
+
+    & button {
+        cursor: pointer;
+        &:active {
+            border-color: $color-primary;
+            color: $color-primary;
+
+            // transform: scale(.99);
+        }
+    }
+}
