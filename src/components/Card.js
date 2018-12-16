@@ -1,14 +1,20 @@
 import React from 'react';
 
+
+
+
 const Card = (props) => {
     let fill = (Math.pow(2, props.lvl) * 100 / 2);
     fill =  (props.exp - fill)/fill*100;
     let color = props.attrib || "strength";
-    let image = `https://robohash.org/${props.name} ${props.race === "cat" ?
-        "?set=set4" : props.race === "alien" ? "?set=set2" : ""}`;
+    
+    let image = sessionStorage.getItem((props.race+"DB"));
+    image =  JSON.parse(image)[props.clase][1];
+    let img = require('../img/'+image);
+    
     return (
         <div className="card">
-            <img className="card__img" src={image} alt="warrior" />
+            <img className="card__img" src={img} alt="warrior" />
             <span className={"card__lvl " + color}><span className="card__lvl--no">{props.lvl || 0}</span></span>
             <div className="card__proBar">
                 <div className={"card__proBar--fill " + color} style={{ width: fill + "%" }}>&nbsp;</div>
