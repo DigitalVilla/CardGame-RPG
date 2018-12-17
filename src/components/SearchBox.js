@@ -20,9 +20,9 @@ export default function searchBox(props) {
           <option value="male">Male</option>
           <option value="female">Female</option>
       </select>
-      Sort by
+      
       <select onChange={props.sort} name="stats" id="">
-        <option value="0">Stats</option>
+        <option value="0">Sort by</option>
         <option value="armor">Armor</option>
         <option value="critic">Critic</option>
         <option value="damage">Damage</option>

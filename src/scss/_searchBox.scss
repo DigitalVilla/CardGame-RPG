@@ -1,6 +1,9 @@
 .searchBox {
+    background-image: linear-gradient(rgba($color-secondary, .7), rgba($color-primary, .7));
     font-size: 1.8rem;
-
+    max-height: 12vh;
+    box-shadow: 0px .5px 1rem rgba(0, 0, 0, 0.4);
+    z-index: 10;
     & input,
     select,
     button {
@@ -8,19 +11,42 @@
         box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
         border: 1px solid #AAA;
         border-radius: 4px;
-        margin: 2rem 1rem ;
+        margin: 2rem 1rem;
         width: 220px;
         font-size: inherit;
         height: 40px;
         padding: 5px 10px;
         color: #555;
+
+        @media only screen and (max-width: $bp-800) {
+            font-size: 1.4rem;
+            width: 140px;
+            padding: 5px 5px;
+            height: 30px;
+        }
+
+        @media only screen and (max-width: $bp-600) {
+            margin: 1rem;
+            width: 110px;
+            padding: 5px 5px;
+            height: 30px;
+        }
+    }
+
+
+    @media only screen and (max-width: $bp-800) {
+        font-size: 1.4rem;
+    }
+
+    @media only screen and (max-width: $bp-400) {
+        max-height: 18vh;
     }
 
     & select {
         background-image: url(../img/icons/select.png), linear-gradient(#FAFAFA, #F4F4F4 40%, #e7e7e7);
         background-position: 90% center;
         background-repeat: no-repeat;
-        background-size:  auto 100%;
+        background-size: auto 100%;
         overflow: hidden;
         appearance: button;
         padding-end: 20px;
@@ -37,6 +63,7 @@
 
     & button {
         cursor: pointer;
+
         &:active {
             border-color: $color-primary;
             color: $color-primary;

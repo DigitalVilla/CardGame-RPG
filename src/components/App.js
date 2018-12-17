@@ -5,6 +5,7 @@ import Scroll from "./Scroll"
 import Hero from "../js/Hero"
 import util from "../js/utils"
 import fetch from "../js/fetch"
+let loader = require('../img/icons/load.gif');
 
 export default class App extends Component {
     constructor() {
@@ -44,46 +45,44 @@ export default class App extends Component {
         this.setState({filters: [filters[1].value,filters[2].value]})
     }
 
-    render() {
-        const heroes = this.state.heroes;
-        
-        const selection  = () => {
-            let sorted = [];
+    selection  = () => {
+        let sorted = [];
 
-            if (heroes.length > 0) {
-                
-                let filters = this.state.filters;
-                sorted = this.state.heroes.filter(h => {
-                    return h["name"].toLowerCase().includes(this.state.search);
-                })
-                
-                if (filters.length > 0) {
-                    let params = ["clase","race"];
-                    for (let i = 0; i < params.length; i++) {
-                        if (filters[i] === "0") continue;
-                        sorted = sorted.filter(h => {
-                            return h[params[i]] === filters[i];
-                        })
-                    }
-                }
-                
-                if (this.state.sort !== "0") {
-                    util.sortBy(sorted,this.state.sort, false);
+        if (this.state.heroes.length > 0) {
+            let filters = this.state.filters;
+            sorted = this.state.heroes.filter(h => {
+                return h["name"].toLowerCase().includes(this.state.search);
+            })
+            
+            if (filters.length > 0) {
+                let params = ["clase","race"];
+                for (let i = 0; i < params.length; i++) {
+                    if (filters[i] === "0") continue;
+                    sorted = sorted.filter(h => {
+                        return h[params[i]] === filters[i];
+                    })
                 }
             }
-            return sorted;
+            
+            if (this.state.sort !== "0") {
+                util.sortBy(sorted,this.state.sort, false);
+            }
         }
+        return sorted;
+    }
 
-        if (heroes.length > 0)
-        return (
-            <div>
-                <SearchBox search={this.searchBy} filter={this.filterBy} sort={this.sortBy}/>
-                <Scroll >
-                    <Deck heroes={selection()}/>         
-                </Scroll>
-            </div>
-        )
-        let loader = require('../img/icons/load.gif');
+    render() {
+        if (this.state.heroes.length > 0) {
+            return (
+                <div>
+                    <SearchBox search={this.searchBy} filter={this.filterBy} sort={this.sortBy}/>
+                    <Scroll >
+                        <Deck heroes={this.selection()}/>         
+                    </Scroll>
+                </div>
+            )
+        }
+       
         return (
             <div>
                 <h1>LOADING...</h1>
