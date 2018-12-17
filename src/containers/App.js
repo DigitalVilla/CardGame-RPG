@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Deck from "./Deck";
-import SearchBox from "./SearchBox"
-import Scroll from "./Scroll"
+import Deck from "../components/Deck";
+import SearchBox from "../components/SearchBox"
+import Scroll from "../components/Scroll"
 import Hero from "../js/Hero"
 import util from "../js/utils"
 import fetch from "../js/fetch"
@@ -27,9 +27,9 @@ export default class App extends Component {
                 json.forEach(e => {
                     heroes.push(new Hero(e[0], e[1], e[2], e[3]));
                 });
-                this.setState({heroes: util.sortBy(heroes,"name", false),})
+                this.setState({heroes: util.sortBy(heroes,"attrib", false),})
             })
-        },1000)
+        },1e3)
     }
 
     searchBy = (event) => {
@@ -46,11 +46,11 @@ export default class App extends Component {
     }
 
     selection  = () => {
+        const {heroes, filters, sort } = this.state;
         let sorted = [];
 
-        if (this.state.heroes.length > 0) {
-            let filters = this.state.filters;
-            sorted = this.state.heroes.filter(h => {
+        if (heroes.length) {
+            sorted = heroes.filter(h => {
                 return h["name"].toLowerCase().includes(this.state.search);
             })
             
@@ -64,15 +64,15 @@ export default class App extends Component {
                 }
             }
             
-            if (this.state.sort !== "0") {
-                util.sortBy(sorted,this.state.sort, false);
+            if (sort !== "0") {
+                util.sortBy(sorted, sort, false);
             }
         }
         return sorted;
     }
 
     render() {
-        if (this.state.heroes.length > 0) {
+        if (this.state.heroes.length) 
             return (
                 <div>
                     <SearchBox search={this.searchBy} filter={this.filterBy} sort={this.sortBy}/>
@@ -81,7 +81,6 @@ export default class App extends Component {
                     </Scroll>
                 </div>
             )
-        }
        
         return (
             <div>
