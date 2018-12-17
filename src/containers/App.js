@@ -5,6 +5,7 @@ import Scroll from "../components/Scroll"
 import Hero from "../js/Hero"
 import util from "../js/utils"
 import fetch from "../js/fetch"
+import ErrorBoundry from '../components/ErrorBoundry';
 let loader = require('../img/icons/load.gif');
 
 export default class App extends Component {
@@ -77,7 +78,9 @@ export default class App extends Component {
                 <div>
                     <SearchBox search={this.searchBy} filter={this.filterBy} sort={this.sortBy}/>
                     <Scroll >
+                        <ErrorBoundry>
                         <Deck heroes={this.selection()}/>         
+                        </ErrorBoundry>
                     </Scroll>
                 </div>
             )
