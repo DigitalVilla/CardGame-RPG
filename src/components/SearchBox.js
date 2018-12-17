@@ -1,25 +1,37 @@
 import React from 'react'
 
-export default function searchBox() {
+export default function searchBox(props) {
   return (
     <div className="searchBox">
-      <input type="text" placeholder="Hero Name" maxLength="6"/>
-      
-      <select name="" id="">
-        <option value="0">Wizard</option>
-        <option value="1">Cleric</option>
-        <option value="2">Warrior</option>
-        <option value="3">Paladin</option>
-        <option value="4">Hunter</option>
-        <option value="5">Thief</option>
-      </select>
-        
-      <select name="" id="">
-          <option value="0">Male</option>
-          <option value="0">Female</option>
+      <input onChange={props.search} type="text" placeholder="Filter by Name" maxLength="6"/>
+
+      <select onChange={props.filter} name="clase" id="">
+        <option value="0">Class</option>
+        <option value="wizard">Wizard</option>
+        <option value="cleric">Cleric</option>
+        <option value="warrior">Warrior</option>
+        <option value="paladin">Paladin</option>
+        <option value="hunter">Hunter</option>
+        <option value="thief">Thief</option>
       </select>
 
-      <button onClick={(e)=>{console.log(e.target)}}> Create </button>
+      <select onChange={props.filter} name="sex" id="">
+          <option value="0">Sex</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+      </select>
+      Sort by
+      <select onChange={props.sort} name="stats" id="">
+        <option value="0">Stats</option>
+        <option value="armor">Armor</option>
+        <option value="critic">Critic</option>
+        <option value="damage">Damage</option>
+        <option value="health">Health</option>
+        <option value="magic">Magic</option>
+        <option value="mana">Mana</option>
+      </select>
+     
+      {/* <button onClick={props.filter}> Filter </button> */}
       
     </div>
   )

@@ -1,5 +1,5 @@
 .card {
-    border: 5px solid rgba($color-secondary, 1);
+    border: 5px solid $color-secondary;
     border-radius: 10px;
     width: 200px;
     height: 340px;
@@ -24,7 +24,6 @@
         box-shadow: 0 .5rem 1rem rgba(#000, .2);
         border: 2px solid rgba($color-secondary, 1);
         border: 2px solid #fff;
-        // background: $color-pow;
         color: #fff;
 
 
@@ -101,6 +100,10 @@
     &:hover {
         transform:scale(1.02);
         box-shadow: 0 .5rem 1rem rgba(#000, .4);
+    }
+    &:active {
+        transform:scale(1);
+        box-shadow: 0 .5rem .5rem rgba(#000, .3);
     }
     user-select: none;
 }

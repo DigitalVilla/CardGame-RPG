@@ -5,12 +5,9 @@ import React from 'react';
 
 const Card = (props) => {
     let fill = (Math.pow(2, props.lvl) * 100 / 2);
-    fill =  (props.exp - fill)/fill*100;
+    fill =  (props.exp - fill)/fill*100; // some math to fill tht experience bar.
     let color = props.attrib || "strength";
-    
-    let image = `${(props.race).charAt(0)}_${(props.clase).slice(0,3)}2.png`;
-    console.log(image);
-    
+    let image = `${(props.race).charAt(0)}_${(props.clase).slice(0,3)+props.avatar}.png`;
     let img = require('../img/'+image);
     
     return (
@@ -18,11 +15,10 @@ const Card = (props) => {
             <img className="card__img" src={img} alt="warrior" />
             <span className={"card__lvl " + color}><span className="card__lvl--no">{props.lvl || 0}</span></span>
             <div className="card__proBar">
-                <div className={"card__proBar--fill " + color} style={{ width: fill + "%" }}>&nbsp;</div>
+                <div className={"card__proBar--fill " + color} style={{ width: fill + "%" }}></div>
             </div>
             <h3>{props.name || "Cato"}<span>{" the " + props.clase || "Warrior"}</span></h3>
             <div className="card__table">
-
                 <div className={"card__table--head " + color}>
                     <span>Dmg</span>
                     <span>Critic</span>
@@ -55,8 +51,6 @@ const Card = (props) => {
                     <span>{props.intelligence}</span>
                 </div>
             </div>
-
-
         </div>
     )
 }
