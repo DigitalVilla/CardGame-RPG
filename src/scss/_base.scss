@@ -51,7 +51,7 @@ body {
     color: $color-grey-dark-2;
     font-weight: 300;
     line-height: 1.6;
-   background:  rgb(238, 238, 238);
+   background:  #e5eff1;
    text-align: center;
    margin-top: 5rem;
 }
@@ -59,7 +59,7 @@ body {
 
 
 ::selection {
-    background: #ebebeb;
+    background: #e5eff1;
     /* WebKit/Blink Browsers */
     color: $color-primary;
 }
@@ -96,3 +96,11 @@ input::-moz-focus-inner {
 .intelligence{background: $color-intel}
 .strength{background: $color-pow}
 .gray{background: #ddd}
+
+
+#loading {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 60vh;
+}

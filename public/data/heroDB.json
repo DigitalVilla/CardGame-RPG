@@ -1,6 +1,4 @@
-import Hero from '../js/Hero';
-
-const db = [
+[
     ["Astro", 1, 0, 1],
     ["Star", 0, 0, 1],
     ["Piper", 1, 1, 1],
@@ -26,11 +24,3 @@ const db = [
     ["Blanca", 0, 5, 2],
     ["Buffer", 1, 5, 2]
 ]
-
-const heroes = [];
-
-db.forEach(e => {
-    heroes.push(new Hero(e[0], e[1], e[2], e[3]));
-});
-
-export default heroes;
